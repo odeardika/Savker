@@ -1,14 +1,175 @@
 .body {
-    background-color: wheat;
+    background-color: #60B04D;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     margin: 0;
     padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
-.sign_up {
+.sign_in {
     background-color: white;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5rem;   
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo_img {
+    height: 3rem;
+    width: auto;
+}
+
+.input_field {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+    justify-content: center;
+}
+
+.logo_text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+    margin-bottom: 0;
+}
+
+.heading {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+}
+
+.signup_href {
+    margin-top: 0;
+    padding: 0;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.input_field input {
+    margin-bottom: 1.5rem;
+    border: none;
+    border-bottom: solid;
+    border-width: 0.1px;
+}
+
+.input_field input:focus {
+    outline: none;
+}
+
+.button_div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.input_field button {
+    background-color: #D9D9D9;
+    color: #fff;
+    font-weight: bolder;
+    height: 2.5rem;
+    width: 13rem;
+    border-radius: 0.3rem;
+    border: none;
+}
+
+.piggy_img {
+    padding: 3rem 3rem;
+    margin: 0rem 2rem;
+    border-radius: 8rem;
+}
+
+@media (max-width: 1024px){
+    .piggy_img {
+        height: 20rem;
+        width: auto;
+        padding: 0rem 0rem 0rem 0rem;
+        border-radius: 3rem;
+    }
+    .sign_in {
+        align-items: center;
+    }
+    .input_field {
+        padding: 4rem;
+    }
+    .logo_img {
+        width: 2rem;
+    }
+    .logo_text {
+        font-size: 1rem;
+    }
+    .heading {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 475px) {
+    .sign_in{
+        background-color: #60B04D;
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 0;
+        margin: 0;
+    }   
+    .piggy_img {
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        position: absolute;
+        top: 0;
+        width: auto;
+        height: auto;
+    }
+    .input_field {
+        width: 30rem;
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+        padding-top: 3rem;
+        border-radius: 25% 25% 0 0;
+        z-index: 2;
+        margin-top: 40rem;
+        
+    }
+    .logo_img {
+        height: 3.5rem;
+        width: auto;
+    }
+    .logo_text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-left: 0.5rem;
+        margin-bottom: 0;
+    }
+    .logo{
+        margin: 0 15% 0 15%;
+    }
+    .heading {
+        font-size: 2.7rem;
+        padding: 0;
+        margin: 0 15% 0 15%;
+    }
+    .signup_href {
+        margin-top: 0;
+        padding: 0;
+        font-size: 0.7rem;
+        margin: 0 15% 0 15%;
+        margin-bottom: 1.3rem;
+    }
+
+    .input_field input {
+        margin: 0 15% 0 15%;
+        margin-bottom: 1.5rem;
+    }
     
+    .button_div {
+        margin-bottom: 5%;
+    }
 }
