@@ -34,7 +34,10 @@ app.post('/api/regis', (req, res) =>{
     }
 
     regisUser(username,email,password)
-    .then(data => {res.status(200).json({massage : "Succesfully create user"})})
+    .then(data => {res.status(200).json({
+        massage : "Succesfully create user",
+        user : data
+    })})
     .catch(error => {
         let status = 400;
         if(error.error === "Email or username already exists"){

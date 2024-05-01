@@ -14,9 +14,7 @@ async function regisUser(name, email, password){
         }
         createUser(name, email, password)
         .then(data => {
-            resolve({
-                massage : "Succesfully create user"
-            })
+            resolve(data)
         })
         .catch(error => {
             if(error['code'] === 'P2002') {

@@ -11,7 +11,12 @@ async function createUser(name, email, password) {
             balance : 0
         }
     })
-    return user
+    return {
+        id : user.id,
+        username : user.name,
+        email : user.email,
+        balance : user.balance
+    }
 }
 
 module.exports = createUser
