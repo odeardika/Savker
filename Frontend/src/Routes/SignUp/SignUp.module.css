@@ -79,10 +79,29 @@
     border-radius: 0.3rem;
     border: none;
 }
-
 .piggy_img {
     border-radius: 3rem;
     margin: 0rem 2rem;
+}
+.error_message{
+    padding: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: red;
+    font-size: 0.7rem;
+}
+
+.hide_massage{
+    display: none;
+}
+
+.input_field input.email_error::placeholder{
+    color: red;
+}
+.input_field input.email_error{
+    border-color: red;
+    background-color: rgb(255, 246, 246);
+    margin-bottom: 0;
 }
 
 @media (max-width: 1024px){
