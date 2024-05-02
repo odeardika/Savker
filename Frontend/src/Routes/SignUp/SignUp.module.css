@@ -95,10 +95,10 @@
     display: none;
 }
 
-.input_field input.email_error::placeholder{
+.input_field input.input_error::placeholder{
     color: red;
 }
-.input_field input.email_error{
+.input_field input.input_error{
     border-color: red;
     background-color: rgb(255, 246, 246);
     margin-bottom: 0;
