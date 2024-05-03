@@ -53,6 +53,7 @@ function SignUp (){
         return setErrorMessage(message);
     }
 
+    const handleButtonOn = () => (email && username && password && confirmPassword);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -111,7 +112,7 @@ function SignUp (){
                 <p className={(confirmPasswordError)? style.error_message : style.hide_massage}>{(!errorMessage)? "" : errorMessage}</p>
 
                 <div className={style.button_div}>
-                    <button>Sign up</button>
+                    <button className={(email && username && password && confirmPassword)? style.active_button : style.normal_button }>Sign up</button>
                 </div>
             </form>
             <img className={style.piggy_img} src={piggy_img} alt="piggy bag image" />

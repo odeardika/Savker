@@ -70,7 +70,7 @@
     align-items: center;
     justify-content: space-around;
 }
-.input_field button {
+.normal_button {
     background-color: #D9D9D9;
     color: #fff;
     font-weight: bolder;
@@ -79,6 +79,28 @@
     border-radius: 0.3rem;
     border: none;
 }
+.normal_button:hover{
+    background-color: hsl(0, 0%, 90%);
+}
+.active_button{
+    background-color: hsl(108, 39%, 50%);
+    color: #fff;
+    font-weight: bolder;
+    height: 2.5rem;
+    width: 11rem;
+    border-radius: 0.3rem;
+    border: none;
+}
+.active_button:hover{
+    background-color: hsl(108, 39%, 60%);
+    color: #fff;
+    font-weight: bolder;
+    height: 2.5rem;
+    width: 11rem;
+    border-radius: 0.3rem;
+    border: none;
+}
+
 .piggy_img {
     border-radius: 3rem;
     margin: 0rem 2rem;
@@ -200,6 +222,10 @@
     
     .button_div {
         margin-bottom: 5%;
+    }
+    .error_message{
+        margin: 0 15% 0 15%;
+        margin-bottom: 1rem;
     }
 }
 
