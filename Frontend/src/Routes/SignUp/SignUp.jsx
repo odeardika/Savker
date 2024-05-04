@@ -53,8 +53,6 @@ function SignUp (){
         return setErrorMessage(message);
     }
 
-    const handleButtonOn = () => (email && username && password && confirmPassword);
-
     const handleSubmit = (event) => {
         event.preventDefault();
         axios.post('http://localhost:3000/api/regis', {
@@ -83,7 +81,6 @@ function SignUp (){
             }if(err.response.data.error === "Missing information"){
                 return handleMissingData("This field still empty", err.response.data.missing_data);
             }
-            // return console.log(err)
         });
 
         

@@ -74,7 +74,7 @@ app.post('/api/login', (req,res) => {
             })    
         }
         if("Not Found" === error.error){
-            const errorMessage = (error.message === "Incorrect password. Please double-check your password and try again.")? "email" : "username"; 
+            const errorMessage = (error.message === "User not found. Please double-check your email and try again or register for a new account.")? "email" : "username"; 
             return res.status(404).json({
                 error : "Not Found",
                 message : `User not found. Please double-check your ${errorMessage} and try again or register for a new account.`
