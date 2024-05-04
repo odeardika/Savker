@@ -1,6 +1,6 @@
 import style from './SignIn.module.css';
 import piggy_img from '../../assets/piggy_bag.png';
-import logo from '../../../public/logo.svg';
+import SavkerLogo from '../../components/SavkerLogo/SavkerLogo'
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -69,10 +69,7 @@ function SignIn (){
     <div className={style.body}>
         <div className={style.sign_in}>
             <form onSubmit={handleSubmit} className={style.input_field}>
-                <div className={style.logo}>
-                    <img src={logo} alt="savker logo" className={style.logo_img} />
-                    <p className={style.logo_text}>SAVKER</p>
-                </div>
+                <SavkerLogo />
                 <h1 className={style.heading}>Wellcome Back</h1>
                 <p className={style.signup_href}>Don't have an account? <a href="./signup">sign up</a></p>
                 <input type="text" placeholder='Username or Email' value={usernameOrEmail} onChange={handleUsernameOrEmail} className={(usernameOrEmailError)? style.input_error : ""}/>

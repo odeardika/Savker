@@ -1,0 +1,40 @@
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logo_img {
+    height: 3rem;
+    width: auto;
+}
+.logo_text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+    margin-bottom: 0;
+}
+
+@media (max-width: 1024px){
+    .logo_img {
+        width: 2rem;
+    }
+    .logo_text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 475px){
+    .logo_img {
+        height: 3.5rem;
+        width: auto;
+    }
+    .logo_text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-left: 0.5rem;
+        margin-bottom: 0;
+    }
+    .logo{
+        margin: 0 15% 0 15%;
+    }
+}
