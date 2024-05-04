@@ -1,5 +1,6 @@
 const express = require('express');
-const regisUser = require('./utils/auth/registration');
+const {regisUser} = require('./utils/auth/registration');
+const {loginUser} = require('./utils/auth/login');
 const cors = require('cors');
 
 
@@ -35,7 +36,7 @@ app.post('/api/regis', (req, res) =>{
 
     regisUser(username,email,password)
     .then(data => {res.status(200).json({
-        massage : "Succesfully create user",
+        message : "Succesfully create user",
         user : data
     })})
     .catch(error => {
@@ -48,6 +49,42 @@ app.post('/api/regis', (req, res) =>{
     })
 })
 
+app.post('/api/login', (req,res) => {
+    const {identifier, password} = req.body;
+
+    if(!identifier || !password){
+        return res.status(400).json({
+            error : "Missing information",
+            message : "Please provide your email, username, and password to complete the registration."
+        });    
+    };
+
+    loginUser(identifier, password)
+    .then(data => {
+        return res.status(200).json({
+            data
+        })
+    })
+    .catch(error => {
+        if("Unauthorized" === error.error){
+            return res.status(400).json({
+                success : false,
+                error : "Unauthorized",
+                message : "Incorrect password. Please double-check your password and try again."
+            })    
+        }
+        if("Not Found" === error.error){
+            const errorMessage = (error.message === "Incorrect password. Please double-check your password and try again.")? "email" : "username"; 
+            return res.status(404).json({
+                error : "Not Found",
+                message : `User not found. Please double-check your ${errorMessage} and try again or register for a new account.`
+            })
+        }
+        return res.status(401).json({
+            error : error
+        })
+    })
+})
 
 app.listen(3000 , () => {
     console.log('http://localhost:3000/')

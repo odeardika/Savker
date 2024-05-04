@@ -1,4 +1,4 @@
-const { PrismaClient } = require('@prisma/client')
+const { PrismaClient } = require('@prisma/client');
 
 const prisma = new PrismaClient()
 
@@ -19,4 +19,27 @@ async function createUser(name, email, password) {
     }
 }
 
-module.exports = createUser
+async function getUser(identifier, identifierType){
+    if(identifierType === "email"){
+        const user = await prisma.user.findUnique({
+            where : {
+                email : identifier
+            }
+        });
+        return user;
+    }else{
+        const user = await prisma.user.findUnique({
+            where : {
+                name : identifier
+            }
+        });
+        return user;
+    }
+}
+// getUser("o").then(data => {
+//     return console.log(!data);
+// }).catch(err => {
+//     return console.error(err)
+// });
+
+module.exports = {createUser, getUser}

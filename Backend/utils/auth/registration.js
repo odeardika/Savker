@@ -1,5 +1,5 @@
 const emailValidator = require("email-validator");
-const createUser = require('../database/prismaUtils')
+const {createUser} = require('../database/prismaUtils');
  
 // validator.validate("test@email.com"); // true
 
@@ -29,8 +29,6 @@ async function regisUser(name, email, password){
     })
 }
 
-module.exports = regisUser
+module.exports = {regisUser};
 
 
-
-    // var result = createUser(name, email, password).then().catch()
